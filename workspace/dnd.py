@@ -2,6 +2,6 @@ import argparse
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument("echo")
+parser.add_argument("command")
 args = parser.parse_args()
 print(args)
