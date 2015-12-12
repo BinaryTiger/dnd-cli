@@ -1,4 +1,6 @@
-from unittest import TestCase, skip
+from unittest import TestCase
+from unittest import skip
+
 import workspace
 
 

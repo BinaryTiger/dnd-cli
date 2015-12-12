@@ -11,11 +11,14 @@ parser.add_argument("command", help="main command used by the tool", choices=["b
 parser.add_argument("object", help="specify which kind of object the tool have to manipulate", choices=["city", "npc"])
 
 #Flags
+
+parser.add_argument("--overwrite", help="ignores the file exist exception and overwrite it",
+                    action="store_true")
+parser.add_argument("--random", help="ignores parameters and generate the object randomly",
+                    action="store_true")
 parser.add_argument("-v", "--verbose", help="increase output verbosity",
                     action="store_true")
 parser.add_argument("-V", "--version", action='version', version="%(prog)s " + VERSION)
-parser.add_argument("--random", help="ignores parameters and generate the object randomly",
-                    action="store_true")
 
 
 
