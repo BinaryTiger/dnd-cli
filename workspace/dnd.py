@@ -1,5 +1,6 @@
 import argparse
 import json
+from city import City
 
 parser = argparse.ArgumentParser(prog='dnd')
 
@@ -16,7 +17,6 @@ parser.add_argument("object", help="specify which kind of object the tool have t
 parser.add_argument("name", help="specify the name of the object")
 
 #Flags
-
 parser.add_argument("--overwrite", help="ignores the file exist exception and overwrite it",
                     action="store_true")
 parser.add_argument("--random", help="ignores parameters and generate the object randomly",
@@ -47,10 +47,13 @@ if args.overwrite:
 if args.command == "build":
     print("We are building a " + args.object)
     
-    with open(filepath, 'w') as outfile:
-        json.dump(MOCK_CITY, outfile, indent=4, separators=(',', ': '))
-    
-    
+    if args.object == "city":
+        city = City()
+        city.name = args.name
+        city.population = 10000
+        
+        city.save_to_file(filepath);
+        
 elif args.command == "show":
     if args.object == "city":
         with open(filepath, 'r') as infile:
