@@ -13,6 +13,11 @@ parser.add_argument("command", help="main command used by the tool", choices=["b
 parser.add_argument("-v", "--verbose", help="increase output verbosity",
                     action="store_true")
 parser.add_argument("-V", "--version", action='version', version="%(prog)s " + VERSION)
+parser.add_argument("--random", help="Ignores parameter and generate the object randomly",
+                    action="store_true")
+
+
+
 args = parser.parse_args()
 
 if args.verbose:
