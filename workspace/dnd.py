@@ -4,6 +4,11 @@ parser = argparse.ArgumentParser(prog='dnd')
 
 #Constants
 VERSION = "0.0.1"
+OUTPUT_PATH_FOR_TESTING = "../output/"
+CITY_FOLDER = "../output/city"
+NPC_FOLDER = "../output/npc"
+MOCK_CITY = "{name: 'MOCK CITY', population: 10000}"
+MOCK_NPC = "{name: 'MOCK NPC', age: 19}"
 
 
 #Arguments
@@ -25,18 +30,24 @@ parser.add_argument("-V", "--version", action='version', version="%(prog)s " + V
 args = parser.parse_args()
 isVerbose = False
 isRandom = False
+isOverwrite = False;
 
+#Maybe I can loop the parameters and set the conresponding flags accordingly
 if args.verbose:
     isVerbose = True
 
 if args.random:
     isRandom = True
 
+if args.overwrite:
+    isOverwrite = True
+#End of flags settings
+
 if args.command == "build":
     print("We are building a " + args.object)
     
     if isRandom:
-        print("Random " + args.object)
+        print("Building a random " + args.object)
     
     if isVerbose:
         print("We are creating it verbosely")
