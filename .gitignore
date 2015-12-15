@@ -4,6 +4,7 @@
 *.log
 #*#
 Thumbs.db
+sonar-project.properties
 /*.egg-info/
 /build/
 /dist/
