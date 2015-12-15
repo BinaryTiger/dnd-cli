@@ -1,16 +1,18 @@
+""" Workspace test class """
+
 from unittest import TestCase
 from unittest import skip
 
-import workspace
-
 
 class workspaceTest(TestCase):
-	def setUp(self):
-		pass
+    """Test the workspace class"""
 
-	def tearDown(self):
-		pass
+    def setUp(self):
+        pass
 
-	@skip('Tests not implemented')
-	def test_something(self):
-		self.assertTrue(False)
+    def tearDown(self):
+        pass
+
+    @skip('Tests not implemented')
+    def test_something(self):
+        self.assertTrue(False)
