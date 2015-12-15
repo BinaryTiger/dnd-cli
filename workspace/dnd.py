@@ -1,3 +1,6 @@
+"""This module is the core dnd app. Use dnd -h for help"""
+
+
 import argparse
 import json
 from city import City
@@ -26,22 +29,21 @@ parser.add_argument("-v", "--verbose", help="increase output verbosity",
 parser.add_argument("-V", "--version", action='version', version="%(prog)s " + VERSION)
 
 
-
 args = parser.parse_args()
-isVerbose = False
-isRandom = False
-isOverwrite = False;
-filepath = OUTPUT_PATH_FOR_TESTING + args.object + "/" + args.name + ".json"
+is_verbose = False
+is_random = False
+is_overwrite = False
+file_path = OUTPUT_PATH_FOR_TESTING + args.object + "/" + args.name + ".json"
 
-# Maybe I can loop the parameters and set the conresponding flags accordingly
+# Maybe I can loop the parameters and set the corresponding flags accordingly
 if args.verbose:
-    isVerbose = True
+    is_verbose = True
 
 if args.random:
-    isRandom = True
+    is_random = True
 
 if args.overwrite:
-    isOverwrite = True
+    is_overwrite = True
 # End of flags settings
 
 if args.command == "build":
@@ -52,10 +54,9 @@ if args.command == "build":
         city.name = args.name
         city.population = 10000
 
-        city.save_to_file(filepath);
+        city.save_to_file(file_path)
 
 elif args.command == "show":
-    if args.object == "city":
-        with open(filepath, 'r') as infile:
-            data = json.load(infile)
-            print(json.dumps(data, indent=4, separators=(',', ': ')))
+    with open(file_path, 'r') as infile:
+        data = json.load(infile)
+        print(json.dumps(data, indent=4, separators=(',', ': ')))
