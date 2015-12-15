@@ -1,4 +1,6 @@
-"""This module is the core dnd app. Use dnd -h for help"""
+""" This module is the core dnd app. Use dnd -h for help
+    I'm adding lines just to test sonarqube github integration
+"""
 
 
 import argparse
