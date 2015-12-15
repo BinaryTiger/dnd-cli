@@ -8,6 +8,7 @@ import json
 from city import City
 
 parser = argparse.ArgumentParser(prog='dnd')
+introducing_aBadlyMadeVariableName = "Yes"
 
 # Constants
 VERSION = "0.0.1"
