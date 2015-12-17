@@ -1,17 +1,25 @@
 
 <img src="https://img.shields.io/sonar/http/binarytiger.me:9000/03:dnd-cli/tech_debt.svg">
 
-Python cli for lazy DMs
+#Python cli for lazy DMs
 
-Working command
+##Working command
 
-Build a random city with the specified city name and with a population of 10 000
+- Build a random city with the specified city name and with a population of 10 000
 
 ```shell
 python3 dnd.py build city {cityName} --random
 ```
 
-Short Term Road Map
+- Working flags
+```shell
+-h -> show help
+-V -> show program version
+--random -> build a random object (Only working for city right now)
+-v -> verbose. Doesn't show much more as of right now
+```
+
+##Short Term Road Map
 
 - Random NPC
 - Parametered City
