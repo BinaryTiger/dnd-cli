@@ -19,7 +19,6 @@ class City(object):
     OUTPUT_PATH = "../output/city/"
 
     def __init__(self, name, population):
-        self.data = []
         self.name = name
         self.population = population
         self.race_relation = ""
@@ -27,7 +26,6 @@ class City(object):
         self.notable_trait = ""
         self.known_for = ""
         self.calamity = ""
-        self.buildings = []
 
 
     def build_random(self):
@@ -53,7 +51,6 @@ class City(object):
             "notable trait": self.notable_trait,
             "known for": self.known_for,
             "calamity": self.calamity,
-            "building": self.buildings
         }
 
         return city_dictionary
