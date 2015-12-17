@@ -1,11 +1,10 @@
-""" This module is the core dnd app. Use dnd -h for help
-    I'm adding lines just to test sonarqube github integration
-"""
+""" This module is the core dnd app. Use dnd -h for help"""
 
 
 import argparse
 import json
 from city import City
+from random_table import RandomTable
 
 parser = argparse.ArgumentParser(prog='dnd')
 
@@ -59,6 +58,4 @@ if args.command == "build":
         city.save_to_file(file_path)
 
 elif args.command == "show":
-    with open(file_path, 'r') as infile:
-        data = json.load(infile)
-        print(json.dumps(data, indent=4, separators=(',', ': ')))
+    print(RandomTable.roll("../config/city/calamity.json"))
