@@ -54,21 +54,39 @@ class City(object):
             print("Saving the city to file")
         
         savepath = self.OUTPUT_PATH + self.name + self.FILE_EXTENSION
-        self.save_to_file(savepath, overwrite)
+        self.save_to_file(savepath, overwrite, verbose)
         
         if verbose:
             print("City saved under: " + savepath)
 
-    def save_to_file(self, path, overwrite=False):
+    def save_to_file(self, path, overwrite=False, verbose=False):
+        if verbose:
+            print("Building the city dictionnary")
+            
         city = self.build_dictionary()
+        
+        if verbose:
+            print("-> ")
+            pprint.pprint(city)
+            print("Checking overwrite status")
         
         if overwrite:
             write_mode = "w"
+            if verbose:
+                print("-> Overwriting")
         else:
             write_mode = "x"
+            if verbose:
+                print("-> Not Overwriting")
+
+        if verbose:
+            print("Opening the file")
             
         with open(path, write_mode) as outfile:
             json.dump(city, outfile, indent=4, separators=(',', ': '))
+        
+        if verbose:
+            print("-> File saved")
 
     def build_dictionary(self):
         city_dictionary = {
