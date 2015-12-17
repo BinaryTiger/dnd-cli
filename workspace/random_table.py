@@ -11,6 +11,7 @@ class RandomTable(object):
     @staticmethod
     def roll(table_path):
         """Roll on the table specifed in the path argument"""
+        
         with open(table_path, 'r') as infile:
             data = json.load(infile)
             roll = random.randint(1, len(data))

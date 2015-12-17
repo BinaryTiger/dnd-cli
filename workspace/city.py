@@ -2,15 +2,26 @@
 
 
 import json
+from random_table import RandomTable
 
 
 class City(object):
     """City class for building the object representation"""
+    
+    CALAMITY_PATH = "calamity"
+    KNOWN_FOR_PATH = "known_for"
+    RACE_RELATION_PATH = "race_relation"
+    RULER_STATUS_PATH = "ruler_status"
+    TRAITS_PATH = "traits"
+    
+    FILE_EXTENSION = ".json"
+    CITY_CONFIG_PATH = "../config/city/"
+    OUTPUT_PATH = "../output/city/"
 
-    def __init__(self):
+    def __init__(self, name, population):
         self.data = []
-        self.name = ""
-        self.population = 0
+        self.name = name
+        self.population = population
         self.race_relation = ""
         self.ruler_status = ""
         self.notable_trait = ""
@@ -18,10 +29,15 @@ class City(object):
         self.calamity = ""
         self.buildings = []
 
-    @staticmethod
-    def build_random():
-        # TODO(Antoine) Build random tables DMG p.112
-        return "Randomizing city"
+
+    def build_random(self):
+        self.race_relation = RandomTable.roll(self.build_config_path(propertie=self.RACE_RELATION_PATH))
+        self.ruler_status = RandomTable.roll(self.build_config_path(propertie=self.RULER_STATUS_PATH))
+        self.notable_trait = RandomTable.roll(self.build_config_path(propertie=self.TRAITS_PATH))
+        self.known_for = RandomTable.roll(self.build_config_path(propertie=self.KNOWN_FOR_PATH))
+        self.calamity = RandomTable.roll(self.build_config_path(propertie=self.CALAMITY_PATH))
+        
+        self.save_to_file(self.OUTPUT_PATH + self.name + self.FILE_EXTENSION) 
 
     def save_to_file(self, path):
         city = self.build_dictionary()
@@ -41,3 +57,6 @@ class City(object):
         }
 
         return city_dictionary
+        
+    def build_config_path(self, propertie=""):
+        return self.CITY_CONFIG_PATH + propertie + self.FILE_EXTENSION

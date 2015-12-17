@@ -50,12 +50,9 @@ if args.overwrite:
 if args.command == "build":
     print("We are building a " + args.object)
 
-    if args.object == "city":
-        city = City()
-        city.name = args.name
-        city.population = 10000
-
-        city.save_to_file(file_path)
+    if args.object == "city" and is_random:
+        city = City(args.name, 10000)
+        city.build_random();
 
 elif args.command == "show":
-    print(RandomTable.roll("../config/city/calamity.json"))
+    print("Showing " + args.name)
