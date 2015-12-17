@@ -31,4 +31,10 @@ python3 dnd.py show city {cityName}
 - Random NPC
 - Parametered City
 - Parametered NPC
-- Showing built npc by name 
+- Showing built npc by name
+- Add random city name table
+
+##Programming road map
+
+- Split city into city object and city builder class
+- Make build_random static when city name table is there

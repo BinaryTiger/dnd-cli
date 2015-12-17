@@ -49,7 +49,7 @@ if args.command == "build":
 
     if args.object == "city" and is_random:
         city = City(args.name, 10000)
-        city.build_random(overwrite = is_overwrite);
+        city.build_random(overwrite = is_overwrite, verbose=is_verbose);
 
 elif args.command == "show":
     print("Showing " + args.name)

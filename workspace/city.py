@@ -29,14 +29,35 @@ class City(object):
         self.calamity = ""
 
 
-    def build_random(self, overwrite=False):
+    def build_random(self, overwrite=False, verbose=False):
+        if verbose:
+            print("Randomizing the city race relations")
         self.race_relation = RandomTable.roll(self.build_config_path(propertie=self.RACE_RELATION_PATH))
+        if verbose:
+            print("-> " + self.race_relation)
+            print("Randomizing the city ruler status")
         self.ruler_status = RandomTable.roll(self.build_config_path(propertie=self.RULER_STATUS_PATH))
+        if verbose:
+            print("-> " + self.ruler_status)
+            print("Randomizing the city notable trait")
         self.notable_trait = RandomTable.roll(self.build_config_path(propertie=self.TRAITS_PATH))
+        if verbose:
+            print("-> " + self.notable_trait)
+            print("Randomizing what the city is known for")
         self.known_for = RandomTable.roll(self.build_config_path(propertie=self.KNOWN_FOR_PATH))
+        if verbose:
+            print("-> " + self.known_for)
+            print("Randomizing the city impending calamity")
         self.calamity = RandomTable.roll(self.build_config_path(propertie=self.CALAMITY_PATH))
+        if verbose:
+            print("-> " + self.calamity)
+            print("Saving the city to file")
         
-        self.save_to_file(self.OUTPUT_PATH + self.name + self.FILE_EXTENSION, overwrite) 
+        savepath = self.OUTPUT_PATH + self.name + self.FILE_EXTENSION
+        self.save_to_file(savepath, overwrite)
+        
+        if verbose:
+            print("City saved under: " + savepath)
 
     def save_to_file(self, path, overwrite=False):
         city = self.build_dictionary()
@@ -62,7 +83,7 @@ class City(object):
 
         return city_dictionary
         
-    def build_config_path(self, propertie=""):
+    def build_config_path(self, propertie):
         return self.CITY_CONFIG_PATH + propertie + self.FILE_EXTENSION
     
     @staticmethod    
