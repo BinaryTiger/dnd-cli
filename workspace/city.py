@@ -28,18 +28,24 @@ class City(object):
         self.calamity = ""
 
 
-    def build_random(self):
+    def build_random(self, overwrite=False):
         self.race_relation = RandomTable.roll(self.build_config_path(propertie=self.RACE_RELATION_PATH))
         self.ruler_status = RandomTable.roll(self.build_config_path(propertie=self.RULER_STATUS_PATH))
         self.notable_trait = RandomTable.roll(self.build_config_path(propertie=self.TRAITS_PATH))
         self.known_for = RandomTable.roll(self.build_config_path(propertie=self.KNOWN_FOR_PATH))
         self.calamity = RandomTable.roll(self.build_config_path(propertie=self.CALAMITY_PATH))
         
-        self.save_to_file(self.OUTPUT_PATH + self.name + self.FILE_EXTENSION) 
+        self.save_to_file(self.OUTPUT_PATH + self.name + self.FILE_EXTENSION, overwrite) 
 
-    def save_to_file(self, path):
+    def save_to_file(self, path, overwrite=False):
         city = self.build_dictionary()
-        with open(path, 'w') as outfile:
+        
+        if overwrite:
+            write_mode = "w"
+        else:
+            write_mode = "x"
+            
+        with open(path, write_mode) as outfile:
             json.dump(city, outfile, indent=4, separators=(',', ': '))
 
     def build_dictionary(self):

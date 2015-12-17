@@ -14,9 +14,10 @@ python3 dnd.py build city {cityName} --random
 - Working flags
 ```shell
 -h -> show help
--V -> show program version
---random -> build a random object (Only working for city right now)
 -v -> verbose. Doesn't show much more as of right now
+-V -> show program version
+--overwrite -> overwrite the file if it already exist (default = false)
+--random -> build a random object (Only working for city right now)
 ```
 
 ##Short Term Road Map
