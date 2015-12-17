@@ -2,6 +2,7 @@
 
 
 import json
+import pprint
 from random_table import RandomTable
 
 
@@ -63,3 +64,11 @@ class City(object):
         
     def build_config_path(self, propertie=""):
         return self.CITY_CONFIG_PATH + propertie + self.FILE_EXTENSION
+    
+    @staticmethod    
+    def show_city(name):
+        path = City.OUTPUT_PATH + name + City.FILE_EXTENSION
+        print(path)
+        with open(path, 'r') as outfile:
+            pprint.pprint(json.load(outfile))
+        

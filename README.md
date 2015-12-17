@@ -11,6 +11,12 @@
 python3 dnd.py build city {cityName} --random
 ```
 
+- Show a city by its name (name of the file without the extension)
+
+```shell
+python3 dnd.py show city {cityName}
+```
+
 - Working flags
 ```shell
 -h -> show help
@@ -20,10 +26,9 @@ python3 dnd.py build city {cityName} --random
 --random -> build a random object (Only working for city right now)
 ```
 
-##Short Term Road Map
+##Short Term Functionality Road Map
 
 - Random NPC
 - Parametered City
 - Parametered NPC
-- Showing built city by name
 - Showing built npc by name 

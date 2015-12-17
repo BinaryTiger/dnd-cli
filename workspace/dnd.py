@@ -10,8 +10,6 @@ parser = argparse.ArgumentParser(prog='dnd')
 
 # Constants
 VERSION = "0.0.1"
-OUTPUT_PATH_FOR_TESTING = "../output/"
-MOCK_CITY = {"name": "MOCK CITY2", "population": 10000}
 MOCK_NPC = {"name": "MOCK NPC", "age": 19}
 
 
@@ -34,7 +32,6 @@ args = parser.parse_args()
 is_verbose = False
 is_random = False
 is_overwrite = False
-file_path = OUTPUT_PATH_FOR_TESTING + args.object + "/" + args.name + ".json"
 
 # Maybe I can loop the parameters and set the corresponding flags accordingly
 if args.verbose:
@@ -56,3 +53,4 @@ if args.command == "build":
 
 elif args.command == "show":
     print("Showing " + args.name)
+    City.show_city(args.name)
