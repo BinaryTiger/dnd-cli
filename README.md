@@ -23,7 +23,7 @@ python3 dnd.py show city {cityName}
 -v -> verbose. Doesnt show much more as of right now
 -V -> show program version
 --overwrite -> overwrite the file if it already exist (default = false)
---random -> build a random object (Only working for city right now). You can add how many random cities you want by specifiying a number after the flag
+--random [number] -> build a random object (Only working for city right now). You can add how many random cities you want by specifiying a number after the flag
 ```
 
 ##Short Term Functionality Road Map

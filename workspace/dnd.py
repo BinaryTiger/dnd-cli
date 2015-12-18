@@ -19,7 +19,7 @@ parser.add_argument("object", help="specify which kind of object the tool have t
 parser.add_argument("name", help="specify the name of the object")
 
 # Flags
-parser.add_argument("--overwrite", help="ignores the file exist exception and overwrite it",
+parser.add_argument("-o", "--overwrite", help="ignores the file exist exception and overwrite it",
                     action="store_true")
 parser.add_argument("--random", help="ignores parameters and generate the object randomly, "
                     "you can also specify how many cities you want by passing an "
@@ -47,13 +47,11 @@ if args.overwrite:
 # End of flags settings
 
 if args.command == "build":
-    print("We are building a " + args.object)
-
     if args.object == "city" and is_random:
-        print("building " + str(args.random) + " cities")
+        print("Building " + str(args.random) + " cities")
         city = City(args.name, 10000)
         city.build_random(overwrite = is_overwrite, verbose=is_verbose);
 
 elif args.command == "show":
-    print("Showing " + args.name)
-    City.show_city(args.name)
+    if args.object == "city":
+        City.show_city(args.name)
