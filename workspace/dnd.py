@@ -2,9 +2,7 @@
 
 
 import argparse
-import json
 from city import City
-from random_table import RandomTable
 
 parser = argparse.ArgumentParser(prog='dnd')
 
@@ -50,7 +48,7 @@ if args.command == "build":
     if args.object == "city" and is_random:
         print("Building " + str(args.random) + " cities")
         city = City(args.name, 10000)
-        city.build_random(overwrite = is_overwrite, verbose=is_verbose);
+        city.build_random(overwrite=is_overwrite, verbose=is_verbose)
 
 elif args.command == "show":
     if args.object == "city":

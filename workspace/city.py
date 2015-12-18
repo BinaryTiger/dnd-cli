@@ -8,13 +8,12 @@ from random_table import RandomTable
 
 class City(object):
     """City class for building the object representation"""
-    
+
     CALAMITY_PATH = "calamity"
     KNOWN_FOR_PATH = "known_for"
     RACE_RELATION_PATH = "race_relation"
     RULER_STATUS_PATH = "ruler_status"
     TRAITS_PATH = "traits"
-    
     FILE_EXTENSION = ".json"
     CITY_CONFIG_PATH = "../config/city/"
     OUTPUT_PATH = "../output/city/"
@@ -27,7 +26,6 @@ class City(object):
         self.notable_trait = ""
         self.known_for = ""
         self.calamity = ""
-
 
     def build_random(self, overwrite=False, verbose=False):
         if verbose:
@@ -52,24 +50,24 @@ class City(object):
         if verbose:
             print("-> " + self.calamity)
             print("Saving the city to file")
-        
-        savepath = self.OUTPUT_PATH + self.name + self.FILE_EXTENSION
-        self.save_to_file(savepath, overwrite, verbose)
-        
+
+        save_path = self.OUTPUT_PATH + self.name + self.FILE_EXTENSION
+        self.save_to_file(save_path, overwrite, verbose)
+
         if verbose:
-            print("City saved under: " + savepath)
+            print("City saved under: " + save_path)
 
     def save_to_file(self, path, overwrite=False, verbose=False):
         if verbose:
-            print("Building the city dictionnary")
-            
+            print("Building the city dictionary")
+
         city = self.build_dictionary()
-        
+
         if verbose:
             print("-> ")
             pprint.pprint(city)
             print("Checking overwrite status")
-        
+
         if overwrite:
             write_mode = "w"
             if verbose:
@@ -81,10 +79,10 @@ class City(object):
 
         if verbose:
             print("Opening the file")
-            
+
         with open(path, write_mode) as outfile:
             json.dump(city, outfile, indent=4, separators=(',', ': '))
-        
+
         if verbose:
             print("-> File saved")
 
@@ -100,14 +98,14 @@ class City(object):
         }
 
         return city_dictionary
-        
+
     def build_config_path(self, propertie):
         return self.CITY_CONFIG_PATH + propertie + self.FILE_EXTENSION
-    
-    @staticmethod    
+
+    @staticmethod
     def show_city(name):
         path = City.OUTPUT_PATH + name + City.FILE_EXTENSION
         print(path)
         with open(path, 'r') as outfile:
             pprint.pprint(json.load(outfile))
-        
+
