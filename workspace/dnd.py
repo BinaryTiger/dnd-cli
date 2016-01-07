@@ -47,7 +47,7 @@ if args.overwrite:
 if args.command == "build":
     if args.object == "city" and is_random:
         print("Building " + str(args.random) + " cities")
-        city = City(args.name, 10000)
+        city = City(args.name)
         city.build_random(overwrite=is_overwrite, verbose=is_verbose)
 
 elif args.command == "show":

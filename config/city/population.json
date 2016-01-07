@@ -1,0 +1,10 @@
+{
+    "1": "Locality (20-80 people)",
+    "2": "Hamlet (81-400 people)",
+    "3": "Village (401-900 people)",
+    "4": "Burg (901-2000 people)",
+    "5": "Important City (2001-5000 people)",
+    "6": "Big City (500-12000 people)",
+    "7": "City-State (12001-25000 people)",
+    "8": "Metropolis (25000+ people)"
+}
