@@ -29,24 +29,13 @@ parser.add_argument("-V", "--version", action='version', version="%(prog)s " + V
 
 
 args = parser.parse_args()
-is_verbose = False
-is_random = False
-is_overwrite = False
-
-# Maybe I can loop the parameters and set the corresponding flags accordingly
-if args.verbose:
-    is_verbose = True
-
-if args.random:
-    is_random = True
-
-if args.overwrite:
-    is_overwrite = True
-# End of flags settings
+is_verbose = args.verbose
+is_random = args.random
+is_overwrite = args.overwrite
 
 if args.command == "build":
     if args.object == "city" and is_random:
-        print("Building " + str(args.random) + " cities")
+        print("Building " + str(args.random) + " city")
         city = City(args.name)
         city.build_random(overwrite=is_overwrite, verbose=is_verbose)
 

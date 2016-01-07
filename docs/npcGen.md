@@ -9,5 +9,23 @@ third with a consonant. Empty syllables are allowed.
 
 First syllable  -> "B","Br","Er","G","Gr","H","K","Kr","P","Pr","R","V","Vr"
 Second syllable -> "a","i","o","u","aa","uu","a","i","o","u"
-Third syllable  ->"dash","dish","dush","gar","gor","gdush","lo","gdish","k","lg","nak","rag","rbag","rg","rk","ng","nk","rt","ol","urk","shnak","r","g","rug","rz","gash"
+Third syllable  -> "dash","dish","dush","gar","gor","gdush","lo","gdish","k","lg","nak","rag","rbag","rg","rk","ng","nk","rt","ol","urk","shnak","r","g","rug","rz","gash"
+
+### Warhammer Style Orcs
+
+First Word -> "Head","Face","Eye","Arm","Foot","Toe","Ear","Nose","Hair","Blood","Nail",
+      "Snotling","Enemy","Public","Beast","Man","Finger","Goblin","Gretchin",
+      "Halfling","Teeth","Elf","Rat","Ball","Ghoul","Knife","Axe","Wraith","Deamon",
+      "Dragon","Tooth","Death","Mother","Horse","Moon","Dwarf","Earth","Human",
+      "Grass","Flame","Fire","Dark","Hell","Skull","Torch","Rot","Plague","Glory",
+	  "Bone","Fear","Night","Storm","Power","Evil","Swamp","Tree","Stone","Wolf","Bear",
+	  "Claw","Raven","Talon","Shadow","Ogre","Troll","Maggot","Rock","Spear","Blade","Axe"
+Dash -> -
+Second Word -> "killer","crusher","lover","thrower","throttler","eater","hammer","kicker",
+      "walker","puncher","dragger","stomper","torturer","ripper","mangler","hater",
+      "poker","chewer","cutter","slicer","juggler","raper","smasher","shooter",
+      "drinker","crawler","raider","basher","snapper","bringer","bearer","breaker",
+	  "slayer","hunter","stalker","terror","destroyer","licker","gut","slammer","hacker"
+	  
+
 
