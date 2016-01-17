@@ -5,7 +5,7 @@
 
 PLEASE NOTE THAT THIS PROGRAM IS STILL UNDER HEAVY DEVELOPEMENT. YOU SOULDN'T RELY ON IT OR EXPECT IT TO STAY AS IT IS.
 
-##Working command
+##Working commands
 
 - Build a random city with the specified city name
 
@@ -46,7 +46,7 @@ python3 dnd.py show npc {npcName}
 - Parametered NPC
 - Add random city name table
 
-##Programming Road map
+##Programming Road Map
 
 - Split city into city object and city builder class
 - Make build_random static when city name table is there
