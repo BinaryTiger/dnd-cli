@@ -13,19 +13,31 @@ PLEASE NOTE THAT THIS PROGRAM IS STILL UNDER HEAVY DEVELOPEMENT. YOU SOULDN'T RE
 python3 dnd.py build city {cityName} --random
 ```
 
+- Build a random NPC with the specified npc name
+
+```shell
+python3 dnd.py build npc {npcName} --random
+```
+
 - Show a city by its name (name of the file without the extension)
 
 ```shell
 python3 dnd.py show city {cityName}
 ```
 
+- Show a npc by its name (name of the file without the extension)
+
+```shell
+python3 dnd.py show npc {npcName}
+```
+
 - Working flags
 ```shell
 -h -> show help
--v -> verbose. Doesnt show much more as of right now
+-v -> verbose
 -V -> show program version
 --overwrite -> overwrite the file if it already exist (default = false)
---random [number] -> build a random object (Only working for city right now). You can add how many random cities you want by specifiying a number after the flag
+--random [number] -> build a random object. Number will be used when the random name feature will be available
 ```
 
 ##Short Term Functionality Road Map
