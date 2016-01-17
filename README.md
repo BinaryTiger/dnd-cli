@@ -37,14 +37,16 @@ python3 dnd.py show npc {npcName}
 -v -> verbose
 -V -> show program version
 --overwrite -> overwrite the file if it already exist (default = false)
---random [number] -> build a random object. Number will be used when the random name feature will be available
+--random -> build a random object
+--forcename -> force the program to use the specified name. To use with --random (Only working with cities)
 ```
 
 ##Short Term Functionality Road Map
 
 - Parametered City
 - Parametered NPC
-- Add random city name table
+- Random NPC names (by race)
+- NPC races
 
 ##Programming Road map
 

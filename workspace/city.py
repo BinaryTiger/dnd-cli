@@ -15,11 +15,13 @@ class City(object):
     RULER_STATUS_PATH = "ruler_status"
     TRAITS_PATH = "traits"
     POPULATION_PATH = "population"
+    NAME_PATH = "name"
+    
     FILE_EXTENSION = ".json"
     CITY_CONFIG_PATH = "../config/city/"
     OUTPUT_PATH = "../output/city/"
 
-    def __init__(self, name):
+    def __init__(self, name=""):
         self.name = name
         self.population = ""
         self.race_relation = ""
@@ -28,7 +30,14 @@ class City(object):
         self.known_for = ""
         self.calamity = ""
 
-    def build_random(self, overwrite=False, verbose=False):
+    def build_random(self, overwrite=False, verbose=False, random_name=True):
+        if random_name:
+            if verbose:
+                print("Randomizing the city name")
+            self.name = RandomTable.roll(self.build_config_path(propertie=self.NAME_PATH))
+            if verbose:
+                print("-> " + self.name)
+        
         if verbose:
             print("Randomizing the city race relations")
         self.race_relation = RandomTable.roll(self.build_config_path(propertie=self.RACE_RELATION_PATH))
