@@ -3,6 +3,7 @@
 
 import argparse
 from city import City
+from npc import Npc
 
 parser = argparse.ArgumentParser(prog='dnd')
 
@@ -38,7 +39,13 @@ if args.command == "build":
         print("Building " + str(args.random) + " city")
         city = City(args.name)
         city.build_random(overwrite=is_overwrite, verbose=is_verbose)
+    if args.object == "npc" and is_random:
+        print("Building " + str(args.random) + " npc")
+        npc = Npc(args.name)
+        npc.build_random(overwrite=is_overwrite, verbose=is_verbose)
 
 elif args.command == "show":
     if args.object == "city":
         City.show_city(args.name)
+    if args.object == "npc":
+        Npc.show_npc(args.name)
