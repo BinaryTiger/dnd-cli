@@ -30,10 +30,8 @@ python3 dnd.py show city {cityName}
 
 ##Short Term Functionality Road Map
 
-- Random NPC
 - Parametered City
 - Parametered NPC
-- Showing built npc by name
 - Add random city name table
 
 ##Programming Road map
