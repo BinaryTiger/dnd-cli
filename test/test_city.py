@@ -16,6 +16,12 @@ class TestCity:
         city = City()
         assert city.OUTPUT_PATH != ""
         
+    def test_build_config_path(self):
+        city = City()
+        city.CITY_CONFIG_PATH = "cityconfigtest/"
+        city.FILE_EXTENSION = ".test"
+        assert city.build_config_path("test") == "cityconfigtest/test.test"
+        
         
     
     
