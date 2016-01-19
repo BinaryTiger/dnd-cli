@@ -3,7 +3,7 @@
 
 import json
 import pprint
-from random_table import RandomTable
+from workspace.random_table import RandomTable
 
 
 class City(object):

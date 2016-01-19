@@ -42,7 +42,7 @@ setup(
     ],
 
     install_requires=requireModules([
-
+        'pytest'
     ]),
 
     test_suite='workspace'
