@@ -34,33 +34,47 @@ class City(object):
         if random_name:
             if verbose:
                 print("Randomizing the city name")
-            self.name = RandomTable.roll(self.build_config_path(propertie=self.NAME_PATH))
+            self.name = RandomTable.roll(
+                                self.build_config_path(
+                                            propertie=self.NAME_PATH))
             if verbose:
                 print("-> " + self.name)
         
         if verbose:
             print("Randomizing the city race relations")
-        self.race_relation = RandomTable.roll(self.build_config_path(propertie=self.RACE_RELATION_PATH))
+        self.race_relation = RandomTable.roll(
+                                    self.build_config_path(
+                                            propertie=self.RACE_RELATION_PATH))
         if verbose:
             print("-> " + self.race_relation)
             print("Randomizing the city ruler status")
-        self.ruler_status = RandomTable.roll(self.build_config_path(propertie=self.RULER_STATUS_PATH))
+        self.ruler_status = RandomTable.roll(
+                                    self.build_config_path(
+                                            propertie=self.RULER_STATUS_PATH))
         if verbose:
             print("-> " + self.ruler_status)
             print("Randomizing the city notable trait")
-        self.notable_trait = RandomTable.roll(self.build_config_path(propertie=self.TRAITS_PATH))
+        self.notable_trait = RandomTable.roll(
+                                    self.build_config_path(
+                                                    propertie=self.TRAITS_PATH))
         if verbose:
             print("-> " + self.notable_trait)
             print("Randomizing what the city is known for")
-        self.known_for = RandomTable.roll(self.build_config_path(propertie=self.KNOWN_FOR_PATH))
+        self.known_for = RandomTable.roll(
+                                self.build_config_path(
+                                                propertie=self.KNOWN_FOR_PATH))
         if verbose:
             print("-> " + self.known_for)
             print("Randomizing the city impending calamity")
-        self.calamity = RandomTable.roll(self.build_config_path(propertie=self.CALAMITY_PATH))
+        self.calamity = RandomTable.roll(
+                                self.build_config_path(
+                                                propertie=self.CALAMITY_PATH))
         if verbose:
             print("-> " + self.calamity)
             print("Randomizing the city population")
-        self.population = RandomTable.roll(self.build_config_path(propertie=self.POPULATION_PATH))
+        self.population = RandomTable.roll(
+                                    self.build_config_path(
+                                                propertie=self.POPULATION_PATH))
         if verbose:
             print("-> " + self.population)
             print("Saving the city to file")
@@ -118,6 +132,8 @@ class City(object):
 
     @staticmethod
     def show_city(name):
+        #Should be name get_city(_by_name) and return the data instead of 
+        #handling the printing
         path = City.OUTPUT_PATH + name + City.FILE_EXTENSION
         print(path)
         with open(path, 'r') as outfile:
