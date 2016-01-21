@@ -18,9 +18,11 @@ class TestCity:
         
     def test_build_config_path(self):
         city = City()
-        city.CITY_CONFIG_PATH = "cityconfigtest/"
-        city.FILE_EXTENSION = ".test"
-        assert city.build_config_path("test") == "cityconfigtest/test.test"
+        assert City.build_config_path("test") == "../config/city/test.json"
+        
+    def test_build_output_path(self):
+        city = City()
+        assert City.build_output_path("test") == "../output/city/test.json"
         
     def test_build_dict_name(self):
         city = City()
@@ -70,7 +72,10 @@ class TestCity:
         
         city_dict = city.build_dictionary()
         assert city_dict["calamity"] == "doom"
-        
+    
+    # Test save_to_file()
+    
+    # Test build_random()
         
         
         

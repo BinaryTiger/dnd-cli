@@ -2,7 +2,8 @@
 
 import json
 import pprint
-from random_table import RandomTable
+# from workspace.random_table import RandomTable # Used for testing
+from random_table import RandomTable # Used for using
 
 
 class City(object):
@@ -104,7 +105,7 @@ class City(object):
         if verbose:
             print("Opening the file")
             
-        save_path = self.OUTPUT_PATH + self.name + self.FILE_EXTENSION
+        save_path = City.build_output_path(self.name)
         with open(save_path, write_mode) as outfile:
             json.dump(city, outfile, indent=4, separators=(',', ': '))
 
@@ -124,12 +125,17 @@ class City(object):
 
         return city_dictionary
 
-    def build_config_path(self, propertie):
-        return self.CITY_CONFIG_PATH + propertie + self.FILE_EXTENSION
+    @staticmethod
+    def build_config_path(propertie):
+        return City.CITY_CONFIG_PATH + propertie + City.FILE_EXTENSION
+    
+    @staticmethod
+    def build_output_path(name):
+        return City.OUTPUT_PATH + name + City.FILE_EXTENSION
 
     @staticmethod
     def get_city_by_name(name):
-        path = City.OUTPUT_PATH + name + City.FILE_EXTENSION
+        path = City.build_output_path(name)
         print("info fetch from " + path)
         with open(path, 'r') as outfile:
             return json.load(outfile)
