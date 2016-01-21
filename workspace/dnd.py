@@ -1,7 +1,7 @@
 """ This module is the core dnd app. Use dnd -h for help"""
 
-
 import argparse
+import pprint
 from city import City
 from npc import Npc
 
@@ -48,6 +48,6 @@ if args.command == "build":
 
 elif args.command == "show":
     if args.object == "city":
-        City.show_city(args.name)
+        pprint.pprint(City.get_city_by_name(args.name))
     if args.object == "npc":
         Npc.show_npc(args.name)

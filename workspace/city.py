@@ -1,9 +1,8 @@
 """This module take care of everything city related """
 
-
 import json
 import pprint
-from workspace.random_table import RandomTable
+from random_table import RandomTable
 
 
 class City(object):
@@ -79,13 +78,10 @@ class City(object):
             print("-> " + self.population)
             print("Saving the city to file")
 
-        save_path = self.OUTPUT_PATH + self.name + self.FILE_EXTENSION
-        self.save_to_file(save_path, overwrite, verbose)
+        
+        self.save_to_file(overwrite, verbose)
 
-        if verbose:
-            print("City saved under: " + save_path)
-
-    def save_to_file(self, path, overwrite=False, verbose=False):
+    def save_to_file(self, overwrite=False, verbose=False):
         if verbose:
             print("Building the city dictionary")
 
@@ -107,12 +103,13 @@ class City(object):
 
         if verbose:
             print("Opening the file")
-
-        with open(path, write_mode) as outfile:
+            
+        save_path = self.OUTPUT_PATH + self.name + self.FILE_EXTENSION
+        with open(save_path, write_mode) as outfile:
             json.dump(city, outfile, indent=4, separators=(',', ': '))
 
         if verbose:
-            print("-> File saved")
+            print("City saved under: " + save_path)
 
     def build_dictionary(self):
         city_dictionary = {
@@ -131,11 +128,9 @@ class City(object):
         return self.CITY_CONFIG_PATH + propertie + self.FILE_EXTENSION
 
     @staticmethod
-    def show_city(name):
-        #Should be name get_city(_by_name) and return the data instead of 
-        #handling the printing
+    def get_city_by_name(name):
         path = City.OUTPUT_PATH + name + City.FILE_EXTENSION
-        print(path)
+        print("info fetch from " + path)
         with open(path, 'r') as outfile:
-            pprint.pprint(json.load(outfile))
+            return json.load(outfile)
 
