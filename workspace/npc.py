@@ -130,9 +130,9 @@ class Npc(object):
         return self.NPC_CONFIG_PATH + propertie + self.FILE_EXTENSION
 
     @staticmethod
-    def show_npc(name):
+    def get_npc_by_name(name):
         path = Npc.OUTPUT_PATH + name + Npc.FILE_EXTENSION
         print(path)
         with open(path, 'r') as outfile:
-            pprint.pprint(json.load(outfile))
+            return json.load(outfile)
 

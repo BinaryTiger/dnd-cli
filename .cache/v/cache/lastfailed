@@ -1,1 +1,3 @@
-{}
+{
+  "test/test_city.py::TestCity::()::test_save_to_file": true
+}

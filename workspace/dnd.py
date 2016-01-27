@@ -50,4 +50,4 @@ elif args.command == "show":
     if args.object == "city":
         pprint.pprint(City.get_city_by_name(args.name))
     if args.object == "npc":
-        Npc.show_npc(args.name)
+        pprint.pprint(Npc.get_npc_by_name(args.name))
