@@ -15,4 +15,10 @@ class RandomTable(object):
         with open(table_path, 'r') as infile:
             data = json.load(infile)
             roll = random.randint(1, len(data))
+            return_value = str(data[str(roll)])
+            
+            if return_value.startswith("tbl_"):
+                path_to_roll_on = return_value.split('_')[1]
+                RandomTable.roll(path_to_roll_on)
+                
             return data[str(roll)]
