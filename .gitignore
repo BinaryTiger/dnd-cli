@@ -3,6 +3,7 @@
 *.DS_Store
 *.log
 .sonar
+.cache
 #*#
 Thumbs.db
 sonar-project.properties
